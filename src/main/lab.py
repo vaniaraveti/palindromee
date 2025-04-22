@@ -14,3 +14,5 @@ def is_palindrome(s):
     
     # Compare the string with its reverse
     return s == s[::-1]
+
+
