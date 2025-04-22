@@ -1,22 +1,16 @@
-def is_palindrome(s):
-    """
-    Check if a string is a palindrome and return True or False accordingly.
-    
-    :param s: The string to check.
-    :return: True if the string is a palindrome, False otherwise.
-    """
-    # Ensure input is a string, and handle None or invalid input
-    if not isinstance(s, str):
-        raise ValueError("Input must be a string")
-    
-    # Convert the string to lowercase and remove non-alphanumeric characters
-    s = ''.join(char.lower() for char in s if char.isalnum())
-    
-    # Compare the string with its reverse
-    return s == s[::-1]
+import unittest
+from lab import is_palindrome  # Adjust the import based on your file structure
 
+class TestPalindrome(unittest.TestCase):
+
+    def test_palindrome(self):
+        # Test case where input is a known palindrome
+        test_string = "A man, a plan, a canal, Panama"
+        self.assertTrue(is_palindrome(test_string))  # Should return True
+        
+        # Test case where input is NOT a palindrome
+        test_string = "Hello"
+        self.assertFalse(is_palindrome(test_string))  # Should return False
 
 if __name__ == "__main__":
-    # Example test case
-    test_string = "A man, a plan, a canal, Panama"
-    print(f"Is the string a palindrome? {is_palindrome(test_string)}")
+    unittest.main()
