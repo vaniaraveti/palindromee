@@ -5,14 +5,11 @@ def is_palindrome(s):
     :param s: The string to check.
     :return: True if the string is a palindrome, False otherwise.
     """
-    # Ensure input is a string, and handle None or invalid input
     if not isinstance(s, str):
         raise ValueError("Input must be a string")
-    
-    # Convert the string to lowercase and remove non-alphanumeric characters
+
     s = ''.join(char.lower() for char in s if char.isalnum())
-    
-    # Compare the string with its reverse
+
     return s == s[::-1]
 
 
